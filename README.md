@@ -11,6 +11,10 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 - Inclui separadores no ficheiro final para identificar cada teste (`# Teste x - Nome do perfil - Re = ...`).  
 - Resultados podem ser carregados diretamente no NumPy para pós-processamento.
 
+  ### Futuras Funcionalidades
+
+  - 
+
 ## Requisitos
 
 - Python 3.8+  
