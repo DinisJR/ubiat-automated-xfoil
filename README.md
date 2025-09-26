@@ -11,13 +11,17 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 - Inclui separadores no ficheiro final para identificar cada teste (`# Teste x - Nome do perfil - Re = ...`).  
 - Resultados podem ser carregados diretamente no NumPy para pós-processamento.
 
-  ### Futuras Funcionalidades
+### Futuras Funcionalidades
 
-  - 
+- Desenvolvimento de uma interface gráfica para facilitar a utilização do programa.  
+- Possibilidade de selecionar o ficheiro de perfil aerodinâmico diretamente pela interface.  
+- Definição interativa dos parâmetros de análise (Reynolds, ângulos de ataque, passo, número de iterações) através da interface.  
+- Exportação automática do ficheiro final para a pasta de transferências após a conclusão da análise.  
+
 
 ## Requisitos
 
-- Python 3.8+  
+- [Python 3.8](https://www.python.org/downloads/)
 - [NumPy](https://numpy.org/)  
 - XFOIL instalado e acessível pelo sistema (ex.: `xfoil.exe` no Windows ou `xfoil` no Linux/WSL).  
 
