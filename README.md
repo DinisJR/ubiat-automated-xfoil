@@ -1,4 +1,4 @@
-# UBIAT - XFOIL Automation Script
+# [UBIAT](https://ubiat.aeroubi.pt/) - XFOIL Automation Script
 
 Este projeto permite automatizar a execução do **XFOIL** para análise de perfis aerodinâmicos.  
 O script em Python gera ficheiros de entrada para o XFOIL, executa simulações para diferentes números de Reynolds e agrega os resultados num único ficheiro `.txt`, pronto para análise.
