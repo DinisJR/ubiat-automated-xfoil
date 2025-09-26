@@ -43,7 +43,7 @@ xn yn
 - O formato mais comum é o disponibilizado pela **UIUC Airfoil Database**.  
 - Certifique-se de que o ficheiro não contém colunas extra, cabeçalhos ou separadores diferentes de espaço/tabulação.  
 
-Exemplo de perfil simples:
+Exemplo de um perfil:
 
 ```bash
 NACA 2412
