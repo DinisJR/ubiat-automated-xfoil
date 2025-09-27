@@ -1,4 +1,6 @@
-<img src="https://ubiat.aeroubi.pt/wp-content/uploads/2024/10/LOGO-UBIAT_white-02.png" width="300">
+<div align="center">
+  <img src="https://ubiat.aeroubi.pt/wp-content/uploads/2024/10/LOGO-UBIAT_white-02.png" width="300">
+</div>
 
 # [UBIAT](https://ubiat.aeroubi.pt/) - XFOIL Automation Script
 
