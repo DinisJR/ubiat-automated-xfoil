@@ -17,6 +17,7 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 
 ### Futuras Funcionalidades
 
+- Calcular o valor de Reynolds.
 - Desenvolvimento de uma interface gráfica para facilitar a utilização do programa.  
 - Possibilidade de selecionar o ficheiro de perfil aerodinâmico diretamente pela interface.  
 - Definição interativa dos parâmetros de análise (Reynolds, ângulos de ataque, passo, número de iterações) através da interface.  
