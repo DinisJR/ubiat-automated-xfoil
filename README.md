@@ -1,4 +1,4 @@
-![Texto alternativo]([https://link-da-imagem.com/imagem.png](https://ubiat.aeroubi.pt/wp-content/uploads/2024/10/LOGO-UBIAT_white-02.png))
+![Texto alternativo](https://ubiat.aeroubi.pt/wp-content/uploads/2024/10/LOGO-UBIAT_white-02.png)
 # [UBIAT](https://ubiat.aeroubi.pt/) - XFOIL Automation Script
 
 Este projeto permite automatizar a execução do **XFOIL** para análise de perfis aerodinâmicos.  
