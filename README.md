@@ -23,9 +23,7 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 
 - Calcular o valor de Reynolds com os parâmetros do user.
 
-\[
-Re = \frac{\rho \cdot v \cdot L}{\mu}
-\]
+![Reynolds](https://latex.codecogs.com/svg.latex?Re%20%3D%20%5Cfrac%7B%5Crho%20%5Ccdot%20v%20%5Ccdot%20L%7D%7B%5Cmu%7D)
 
 - **Re** = Número de Reynolds
 - **ρ** = Densidade do fluido *(kg/m³)*  
