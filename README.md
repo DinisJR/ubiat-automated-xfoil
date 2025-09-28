@@ -23,13 +23,15 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 
 - Calcular o valor de Reynolds com os parâmetros do user.
 
-![Reynolds](https://latex.codecogs.com/svg.latex?Re%20%3D%20%5Cfrac%7B%5Crho%20%5Ccdot%20v%20%5Ccdot%20L%7D%7B%5Cmu%7D)
+<p align="center">
+  <b>![Reynolds](https://latex.codecogs.com/svg.latex?Re%20%3D%20%5Cfrac%7B%5Crho%20%5Ccdot%20v%20%5Ccdot%20L%7D%7B%5Cmu%7D)</b>
+</p>
 
-- **Re** = Número de Reynolds
-- **ρ** = Densidade do fluido *(kg/m³)*  
-- **v** = Velocidade do fluido *(m/s)*  
-- **C** = Dimensão característica *(ex.: dimensão da corda, em metros)*  
-- **μ** = Viscosidade dinâmica *(Pa·s)*  
+  - **Re** = Número de Reynolds
+  - **ρ** = Densidade do fluido *(kg/m³)*  
+  - **v** = Velocidade do fluido *(m/s)*  
+  - **C** = Dimensão característica *(ex.: dimensão da corda, em metros)*  
+  - **μ** = Viscosidade dinâmica *(Pa·s)*  
 
 ## Requisitos
 
