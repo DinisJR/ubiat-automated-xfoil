@@ -24,7 +24,7 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 - Calcular o valor de Reynolds com os parâmetros do user.
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.latex?Re%20%3D%20%5Cfrac%7B%5Crho%20%5Ccdot%20v%20%5Ccdot%20L%7D%7B%5Cmu%7D" alt="Equação de Reynolds"/>
+  <b>Re = (ρ · v · L) / μ</b>
 </p>
 
   - **Re** = Número de Reynolds
