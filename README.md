@@ -9,32 +9,31 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 
 ## Funcionalidades
 
-- Executa automaticamente até 10 testes de simulação com diferentes valores de Reynolds. (FUTURO: O user é que coloca o número de testes que quer fazer)
-- Remove o cabeçalho padrão do XFOIL dos resultados.  
-- Junta todos os testes num único ficheiro final (`resultados.txt`).  
-- Inclui separadores no ficheiro final para identificar cada teste (`# Teste x - Nome do perfil - Re = ...`).  
-- Resultados podem ser carregados diretamente no NumPy para pós-processamento.
+- Interface gráfica para seleção do ficheiro `.dat` do perfil.  
+- Definição dos parâmetros de análise:
+  - Ângulo inicial, final e passo (alpha_i, alpha_f, alpha_step).  
+  - Número máximo de iterações (n_iter).  
+  - Lista de valores de Reynolds definida pelo utilizador.  
+- Geração automática de ficheiros temporários na pasta `/temp`.  
+- Consolidação de todos os resultados num único ficheiro `resultados_<perfil>.txt`.  
+- Exportação automática do ficheiro final para a pasta **Transferências** do Windows.  
+- Cabeçalhos do XFOIL removidos para facilitar o pós-processamento.  
 
 ### Futuras Funcionalidades
 
 - Calcular o valor de Reynolds com os parâmetros do user.
-- Desenvolvimento de uma interface gráfica para facilitar a utilização do programa.  
-- Possibilidade de selecionar o ficheiro de perfil aerodinâmico diretamente pela interface.  
-- Definição interativa dos parâmetros de análise (Reynolds, ângulos de ataque, passo, número de iterações) através da interface.  
-- Exportação automática do ficheiro final para a pasta de transferências após a conclusão da análise.  
-
 
 ## Requisitos
 
-- [Python 3.8](https://www.python.org/downloads/)
+- [Python 3.8+](https://www.python.org/downloads/)  
 - [NumPy](https://numpy.org/)  
-- XFOIL instalado e acessível pelo sistema (ex.: `xfoil.exe` no Windows ou `xfoil` no Linux/WSL).  
+- [Pillow (PIL)](https://pypi.org/project/pillow/)  
+- **Tkinter** (vem incluído por defeito no Python para Windows).  
+- **XFOIL** instalado e acessível (ex.: `xfoil.exe` na mesma pasta do programa).  
 
 ## Como usar
 
-1. Coloque o ficheiro `.dat` do perfil aerodinâmico na mesma pasta do script.  
-2. Configure o nome do perfil (`airfoil_name`) e outros parâmetros no script.  
-3. Execute o script:  
+1. Execute o script:  
    ```bash
    python xfoil_automation.py
 
