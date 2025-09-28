@@ -33,7 +33,8 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 
 ## Como usar
 
-1. Execute o script:  
+1. Instalar as dependências
+2. Executar o script:  
    ```bash
    python xfoil_automation.py
 
