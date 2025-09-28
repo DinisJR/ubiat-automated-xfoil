@@ -60,12 +60,12 @@ for i, Re in enumerate(Re_list, start=1):
 
 try:
     polar_data = np.loadtxt(final_polar_file, comments="#")
-    print("Todos os 10 testes concluídos e guardados em", final_polar_file)
-    print("Dimensão dos dados carregados:", polar_data.shape)
+    print(f"Todos os {len(Re_list)} testes concluídos e guardados em", final_polar_file)
+    print(f"Dimensão dos dados carregados:", polar_data.shape)
 except Exception as e:
     print("Erro a carregar dados:", e)
 
-for i in range(1, 11):
+for i in range(1, len(Re_list) + 1):
     if os.path.exists(f"polar_test_{i}.txt"):
         os.remove(f"polar_test_{i}.txt")
     if os.path.exists(f"input_file_{i}.in"):
