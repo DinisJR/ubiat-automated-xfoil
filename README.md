@@ -23,15 +23,15 @@ O script em Python gera ficheiros de entrada para o XFOIL, executa simulações 
 
 - Calcular o valor de Reynolds com os parâmetros do user.
 
-<p align="center">
-  <b>Re = (ρ · v · C) / μ</b>
-</p>
-
-  - **Re** = Número de Reynolds
-  - **ρ** = Densidade do fluido *(kg/m³)*  
-  - **v** = Velocidade do fluido *(m/s)*  
-  - **C** = Dimensão característica *(ex.: dimensão da corda, em metros)*  
-  - **μ** = Viscosidade dinâmica *(Pa·s)*  
+  <p align="center">
+    <b>Re = (ρ · v · C) / μ</b>
+  </p>
+  
+  **Re** = Número de Reynolds
+  **ρ** = Densidade do fluido *(kg/m³)*  
+  **v** = Velocidade do fluido *(m/s)*  
+  **C** = Dimensão característica *(ex.: dimensão da corda, em metros)*  
+  **μ** = Viscosidade dinâmica *(Pa·s)*  
 
 ## Requisitos
 
