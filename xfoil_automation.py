@@ -55,17 +55,30 @@ def run_xfoil(airfoil_file, alpha_i, alpha_f, alpha_step, n_iter, Re_list):
             if ret != 0:
                 messagebox.showerror("Erro", f"Falha ao executar XFOIL (código {ret}).")
                 return
+
             with open(final_polar_file, 'a') as fout:
-                fout.write(f"# ================================================\n")
+                fout.write(f"# ==============================================================\n")
                 fout.write(f"# Teste {i} - {airfoil_name} - Re = {Re}\n")
-                fout.write(f"# ================================================\n")
+                fout.write(f"# ==============================================================\n")
                 with open(temp_polar_file, 'r') as fin:
-                    lines = fin.readlines()[12:]
+                    lines = fin.readlines()[10:]
                     fout.writelines(lines)
                 fout.write("\n\n")
 
+        clean_file = os.path.join(temp_folder, "clean_result.txt")
+        with open(final_polar_file, "r") as fin, open(clean_file, "w") as fout:
+            for line in fin:
+                if line.startswith("#"):
+                    continue
+                if line.strip().startswith("alpha"):
+                    continue
+                if line.strip().startswith("------"):
+                    continue
+                if line.strip():
+                    fout.write(line)
+
         try:
-            polar_data = np.loadtxt(final_polar_file, comments="#")
+            polar_data = np.loadtxt(clean_file)
             print(f"Todos os {len(Re_list)} testes concluídos e guardados em {final_polar_file}")
             print(f"Dimensão dos dados carregados:", polar_data.shape)
         except Exception as e:
