@@ -40,16 +40,17 @@ def run_xfoil(airfoil_file, alpha_i, alpha_f, alpha_step, n_iter, Re_list):
                 os.remove(temp_polar_file)
 
             with open(input_filename, 'w') as input_file:
-                input_file.write(f"LOAD {airfoil_file}\n")
-                input_file.write("PANE\n")
-                input_file.write("OPER\n")
-                input_file.write(f"Visc {Re}\n")
-                input_file.write("PACC\n")
-                input_file.write(temp_polar_file + "\n\n")
-                input_file.write(f"ITER {n_iter}\n")
-                input_file.write(f"ASeq {alpha_i} {alpha_f} {alpha_step}\n")
-                input_file.write("\n\n")
-                input_file.write("quit\n")
+                input_file.write(f"LOAD {airfoil_file}\n")      # Carrega o ficheiro do perfil
+                input_file.write("PANE\n")                      # Gera/ajusta os painéis do perfil (malha de contorno)
+                input_file.write("OPER\n")                      # Entra no modo operacional (onde se fazem análises aerodinâmicas)
+                input_file.write(f"Visc {Re}\n")                # Ativa o modo viscoso e define o número de Reynolds
+                input_file.write("Xtrip 0.05 0.10\n")           # Força a transição laminar→turbulenta em 5% (extradorso) e 10% (intradorso)
+                input_file.write("PACC\n")                      # Inicia a gravação dos resultados (polar file)
+                input_file.write(temp_polar_file + "\n\n")      # Define o nome do ficheiro polar temporário
+                input_file.write(f"ITER {n_iter}\n")            # Define o número máximo de iterações para cada ângulo (controlo de convergência)
+                input_file.write(f"ASeq {alpha_i} {alpha_f} {alpha_step}\n")  # Executa a varredura de ângulos de ataque (de alpha_i a alpha_f)
+                input_file.write("\n\n")                        # Linha em branco — indica o fim da sequência de comandos
+                input_file.write("quit\n")                      # Sai do XFOIL após concluir a análise
 
             try:
                 subprocess.run(f"xfoil.exe < {input_filename}", shell=True, timeout=25)
@@ -57,8 +58,8 @@ def run_xfoil(airfoil_file, alpha_i, alpha_f, alpha_step, n_iter, Re_list):
                 messagebox.showwarning("Aviso", f"O teste com Re = {Re} demorou demasiado tempo e foi interrompido.")
                 with open(final_polar_file, 'a') as fout:
                     fout.write(f"# ==============================================================\n")
-                    fout.write(f"# Teste {i} - {airfoil_name} - Re = {Re}\n")
-                    fout.write(f"# Falha: XFOIL excedeu o tempo limite (15s)\n")
+                    fout.write(f"# Teste {i} - {airfoil_name} - Re={Re}\n")
+                    fout.write(f"# Falha: XFOIL excedeu o tempo limite 25s)\n")
                     fout.write(f"# ==============================================================\n\n")
                 continue
 
