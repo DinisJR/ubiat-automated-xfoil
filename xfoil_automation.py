@@ -51,10 +51,20 @@ def run_xfoil(airfoil_file, alpha_i, alpha_f, alpha_step, n_iter, Re_list):
                 input_file.write("\n\n")
                 input_file.write("quit\n")
 
-            ret = subprocess.call(f"xfoil.exe < {input_filename}", shell=True)
-            if ret != 0:
-                messagebox.showerror("Erro", f"Falha ao executar XFOIL (código {ret}).")
-                return
+            try:
+                subprocess.run(f"xfoil.exe < {input_filename}", shell=True, timeout=25)
+            except subprocess.TimeoutExpired:
+                messagebox.showwarning("Aviso", f"O teste com Re = {Re} demorou demasiado tempo e foi interrompido.")
+                with open(final_polar_file, 'a') as fout:
+                    fout.write(f"# ==============================================================\n")
+                    fout.write(f"# Teste {i} - {airfoil_name} - Re = {Re}\n")
+                    fout.write(f"# Falha: XFOIL excedeu o tempo limite (15s)\n")
+                    fout.write(f"# ==============================================================\n\n")
+                continue
+
+            if not os.path.exists(temp_polar_file):
+                messagebox.showwarning("Aviso", f"O ficheiro polar não foi criado para Re = {Re}.")
+                continue
 
             with open(final_polar_file, 'a') as fout:
                 fout.write(f"# ==============================================================\n")
@@ -96,7 +106,6 @@ def run_xfoil(airfoil_file, alpha_i, alpha_f, alpha_step, n_iter, Re_list):
     finally:
         for f in os.listdir(temp_folder):
             os.remove(os.path.join(temp_folder, f))
-
 
 # ------------------ INTERFACE ------------------
 def start_gui():
