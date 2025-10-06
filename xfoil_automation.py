@@ -69,7 +69,7 @@ def run_xfoil(airfoil_file, alpha_i, alpha_f, alpha_step, n_iter, Re_list):
 
             with open(final_polar_file, 'a') as fout:
                 fout.write(f"# ==============================================================\n")
-                fout.write(f"# Teste {i} - {airfoil_name} - Re = {Re}\n")
+                fout.write(f"# Teste {i} - {airfoil_name} - Re={Re}\n")
                 fout.write(f"# ==============================================================\n")
                 with open(temp_polar_file, 'r') as fin:
                     lines = fin.readlines()[10:]
